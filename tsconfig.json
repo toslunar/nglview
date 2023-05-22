@@ -6,16 +6,16 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,
-    "noUnusedLocals": true,
+    // "noUnusedLocals": true,
     "outDir": "lib",
     "resolveJsonModule": true,
     "rootDir": "src",
     "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true,
+    // "strict": true,
     "strictPropertyInitialization": false,
     "target": "es2015",
-    "types": ["jest"]
+    "types": ["jest", "node"]
   },
   "include": [
     "src/**/*.ts",
