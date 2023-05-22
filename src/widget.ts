@@ -51,3 +51,6 @@ export class ExampleView extends DOMWidgetView {
     this.el.textContent = this.model.get('value');
   }
 }
+
+export * from './base';
+export * from './color';
