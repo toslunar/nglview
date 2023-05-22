@@ -1,5 +1,5 @@
 {
-  "name": "nglview",
+  "name": "nglview-js-widgets",
   "version": "0.1.0",
   "description": "IPython widget to interactively view molecular structures and trajectories.",
   "keywords": [

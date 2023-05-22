@@ -6,7 +6,7 @@ define(function() {
     window['requirejs'].config({
         map: {
             '*': {
-                'nglview': 'nbextensions/nglview/index',
+                'nglview-js-widgets': 'nbextensions/nglview/index',
             },
         }
     });

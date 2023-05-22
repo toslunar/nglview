@@ -40,7 +40,7 @@ module.exports = [
   },
 
   /**
-   * Embeddable nglview bundle
+   * Embeddable nglview-js-widgets bundle
    *
    * This bundle is almost identical to the notebook extension bundle. The only
    * difference is in the configuration of the webpack public path for the
@@ -55,8 +55,8 @@ module.exports = [
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
         libraryTarget: 'amd',
-        library: "nglview",
-        publicPath: 'https://unpkg.com/nglview@' + version + '/dist/'
+        library: "nglview-js-widgets",
+        publicPath: 'https://unpkg.com/nglview-js-widgets@' + version + '/dist/'
     },
     devtool: 'source-map',
     module: {
@@ -77,7 +77,7 @@ module.exports = [
     output: {
       filename: 'embed-bundle.js',
       path: path.resolve(__dirname, 'docs', 'source', '_static'),
-      library: "nglview",
+      library: "nglview-js-widgets",
       libraryTarget: 'amd'
     },
     module: {
