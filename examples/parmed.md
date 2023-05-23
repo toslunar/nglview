@@ -1,1 +1,0 @@
-![parmed](images/parmed.gif)

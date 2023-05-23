@@ -1,1 +1,0 @@
-![mdtraj](images/mdtraj.gif)
