@@ -52,5 +52,9 @@ export class ExampleView extends DOMWidgetView {
   }
 }
 
-export * from './base';
-export * from './color';
+// export all models and views
+export { ColormakerRegistryModel, ColormakerRegistryView } from "./color";
+export { FullscreenModel, FullscreenView } from "./fullscreen";
+// export { StageWidget } from "./gui";
+export { ThemeManagerModel, ThemeManagerView } from "./theme";
+export { NGLView, NGLModel } from './widget_ngl';

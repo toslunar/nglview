@@ -1,5 +1,5 @@
 var Jupyter
-var widgets = require("@jupyter-widgets/base")
+import * as widgets from "@jupyter-widgets/base"
 var NGL = require('ngl')
 var BaseView = require('./base').BaseView
 import $ from 'jquery'
@@ -71,6 +71,22 @@ class NGLModel extends widgets.DOMWidgetModel{
 
 export
 class NGLView extends widgets.DOMWidgetView{
+    // TODO: types
+    _ngl_focused: any;
+    uuid: any;
+    stage_widget: any;
+    comp_uuids: any;
+    _synced_model_ids: any;
+    _synced_repr_model_ids: any;
+    stage: any;
+    $container: any;
+    ngl_view_id: any;
+    $pickingInfo: any;
+    btn_pview_fullscreen: any;
+    player_pview: any;
+    image_btn_pview: any;
+    pgui_view: any;
+
     render(){
         this.beforeDisplay()
         this.displayed.then(function() {
@@ -134,6 +150,7 @@ class NGLView extends widgets.DOMWidgetView{
             that.handleEmbed();
         }else{
             this.requestUpdateStageParameters();
+            // @ts-ignore: FIXME
             if (this.model.views.length == 1){
                 this.serialize_camera_orientation();
             }else{
@@ -269,7 +286,7 @@ class NGLView extends widgets.DOMWidgetView{
                   var model = await that.model.widget_manager.get_model(mid)
                   for (var k in model.views){
                       var pview = model.views[k];
-                      var view = await model.views[k]
+                      var view = await model.views[k] as NGLView
                       if (view.uuid != that.uuid){
                           view.stage.viewerControls.orient(m);
                       }
@@ -500,9 +517,9 @@ class NGLView extends widgets.DOMWidgetView{
         var that = this
         if (that._synced_repr_model_ids.length > 0){
             that._synced_repr_model_ids.forEach(async function(mid){
-                var model = await that.model.widget_manager.get_model(mid)
+                var model = await that.model.widget_manager.get_model(mid) as NGLModel
                     for (var k in model.views){
-                        var view = await model.views[k];
+                        var view = await model.views[k] as NGLView;
                         // not sync with itself
                         if (view.uuid != that.uuid){
                             view._set_representation_from_repr_dict(repr_dict)
@@ -543,7 +560,7 @@ class NGLView extends widgets.DOMWidgetView{
         var that = this
         var repr_dict = this.getReprDictFrontEnd()
         for (var k in this.model.views){
-            var v = await this.model.views[k]
+            var v = await this.model.views[k] as NGLView
             if (v.uuid != that.uuid){
                 v._set_representation_from_repr_dict(repr_dict)
             }
@@ -1101,6 +1118,7 @@ class NGLView extends widgets.DOMWidgetView{
                         component = this.stage.compList[index];
                         this.stage.removeComponent(component);
                     } else if (msg.methodName == 'loadFile') {
+                        // @ts-ignore: FIXME
                         if (this.model.views.length > 1 && msg.kwargs &&
                             msg.kwargs.defaultRepresentation) {
                             // no need to add default representation as all representations
@@ -1187,17 +1205,4 @@ class NGLView extends widgets.DOMWidgetView{
             }
         }
     }
-}
-
-// export all models and views here to make embeding a bit easier
-module.exports = {
-    'NGLView': NGLView,
-    'NGLModel': NGLModel,
-    'NGL': NGL,
-    'FullscreenModel': FullscreenModel,
-    'FullscreenView': FullscreenView,
-    'ColormakerRegistryModel': ColormakerRegistryModel,
-    'ColormakerRegistryView': ColormakerRegistryView,
-    'ThemeManagerModel': ThemeManagerModel,
-    'ThemeManagerView': ThemeManagerView,
 }
