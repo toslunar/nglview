@@ -2,7 +2,7 @@ var Jupyter
 import * as widgets from "@jupyter-widgets/base"
 var NGL = require('ngl')
 var BaseView = require('./base').BaseView
-import $ from 'jquery'
+import $ = require('jquery')
 import * as _ from 'underscore'
 import "./lib_/signals.min.js"
 import "./lib_/colorpicker.min.js"
@@ -131,6 +131,8 @@ class NGLView extends widgets.DOMWidgetView{
         this.$el.append(this.$container)
         this.stage.setParameters(stage_params);
         this.$container = $(this.stage.viewer.container);
+        console.log(this.$container);
+        console.log(this.$container.resizable);
         this.handleResizable()
         this.ngl_view_id = this.uuid
         this.touch();
