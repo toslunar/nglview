@@ -4,8 +4,8 @@ var NGL = require('ngl')
 var BaseView = require('./base').BaseView
 import $ from 'jquery'
 import * as _ from 'underscore'
-import "./lib/signals.min.js"
-import "./lib/colorpicker.min.js"
+import "./lib_/signals.min.js"
+import "./lib_/colorpicker.min.js"
 import "./ui/ui.js"
 import "./ui/ui.extra.js"
 import "./ui/ui.ngl.js"

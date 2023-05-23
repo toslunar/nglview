@@ -4,7 +4,7 @@
  */
 var NGL = require('ngl');
 var UI = require('./ui/ui.js').UI;
-var signals = require("./lib/signals.min.js");
+var signals = require("./lib_/signals.min.js");
 
 
 HTMLElement.prototype.getBoundingClientRect = (function () {
