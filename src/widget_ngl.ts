@@ -2,7 +2,7 @@ var Jupyter
 var widgets = require("@jupyter-widgets/base")
 var NGL = require('ngl')
 var BaseView = require('./base').BaseView
-import * as $ from 'jquery'
+import $ from 'jquery'
 import * as _ from 'underscore'
 import "./lib/signals.min.js"
 import "./lib/colorpicker.min.js"
