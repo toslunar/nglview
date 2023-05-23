@@ -9,8 +9,8 @@ import "./lib_/colorpicker.min.js"
 import "./ui/ui.js"
 import "./ui/ui.extra.js"
 import "./ui/ui.ngl.js"
-// import 'jquery-ui/ui/widgets/dialog' // FIXME: remove?
-// import 'jquery-ui/themes/base/all.css' // FIXME: remove?
+import 'jquery-ui/ui/widgets/dialog' // FIXME: remove?
+import 'jquery-ui/themes/base/all.css' // FIXME: remove?
 
 import { StageWidget } from "./gui"
 import { FullscreenModel, FullscreenView } from "./fullscreen"
