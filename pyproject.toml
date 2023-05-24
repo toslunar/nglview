@@ -49,28 +49,7 @@ ase = ["ase"]
 htmd = ["htmd"]
 qcelemental = ["qcelemental"]
 
-docs = [
-    "jupyter_sphinx",
-    "nbsphinx",
-    "nbsphinx-link",
-    "pypandoc",
-    "pytest_check_links",
-    "recommonmark",
-    "sphinx>=1.5",
-    "sphinx_rtd_theme",
-]
-examples = []
-test = [
-    "ase",
-    "mock",  # TODO: use `unittest.mock` instead
-    "moviepy",
-    "nbval",
-    "parmed",
-    "pillow",
-    "simpletraj",
-    "pytest-cov",
-    "pytest>=6.0",
-]
+# examples = []
 
 [project.urls]
 Homepage = "https://github.com/nglviewer/nglview"
@@ -113,3 +92,28 @@ dependencies = [
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 path = "."
 build_cmd = "build:prod"
+
+[tool.hatch.envs.docs]
+dependencies = [
+    "jupyter_sphinx",
+    "nbsphinx",
+    "nbsphinx-link",
+    "pypandoc",
+    "pytest_check_links",
+    "recommonmark",
+    "sphinx>=1.5",
+    "sphinx_rtd_theme",
+]
+
+[tool.hatch.envs.test]
+dependencies = [
+    "ase",
+    "mock",  # TODO: use `unittest.mock` instead
+    "moviepy",
+    "nbval",
+    "parmed",
+    "pillow",
+    "simpletraj",
+    "pytest-cov",
+    "pytest>=6.0",
+]
