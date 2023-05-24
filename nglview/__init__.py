@@ -4,7 +4,7 @@
 import warnings
 
 from .example import ExampleWidget
-from ._version import __version__, version_info
+from ._version import __version__
 # for doc
 from . import adaptor, datafiles, show, widget
 from .adaptor import *
