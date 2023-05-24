@@ -39,6 +39,16 @@ dynamic = [
 ]
 
 [project.optional-dependencies]
+simpletraj = ["simpletraj"]
+mdtraj = ["mdtraj"]
+pytraj = ["pytraj"]
+mdanalysis = ["MDAnalysis"]
+parmed = ["ParmEd"]
+rdkit = ["rdkit"]
+ase = ["ase"]
+htmd = ["htmd"]
+qcelemental = ["qcelemental"]
+
 docs = [
     "jupyter_sphinx",
     "nbsphinx",
