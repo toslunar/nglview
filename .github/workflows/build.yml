@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: main
+    branches: "*" # TODO: change to master
   pull_request:
     branches: "*"
 
