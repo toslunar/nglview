@@ -34,7 +34,9 @@ classifiers = [
 dependencies = [
     "ipywidgets>=7.0.0",
 ]
-version = "0.1.0.dev0"
+dynamic = [
+    "version",
+]
 
 [project.optional-dependencies]
 docs = [
@@ -62,6 +64,9 @@ test = [
 
 [project.urls]
 Homepage = "https://github.com/nglviewer/nglview"
+
+[tool.hatch.version]
+path = "nglview/_version.py"
 
 [tool.hatch.build]
 artifacts = [
