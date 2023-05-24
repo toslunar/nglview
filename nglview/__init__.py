@@ -61,8 +61,8 @@ def _jupyter_nbextension_paths():
     return [{
         'section': 'notebook',
         'src': 'nbextension',
-        'dest': 'nglview',
-        'require': 'nglview/extension'
+        'dest': 'nglview-js-widgets',
+        'require': 'nglview-js-widgets/extension'
     }]
 
 
