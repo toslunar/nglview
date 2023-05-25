@@ -91,6 +91,7 @@ dependencies = [
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 path = "."
+npm = "jlpm"  # https://github.com/jupyter-widgets/widget-ts-cookiecutter/pull/128
 build_cmd = "build:prod"
 
 [tool.hatch.envs.docs]
