@@ -20,9 +20,9 @@ jobs:
 
       - uses: jupyterlab/maintainer-tools/.github/actions/base-setup@v1
 
-      - run: hatch env create
-      - run: PYTHONPATH=nglview/tests hatch run test:pytest
-      - run: hatch run docs:make -C docs html
+      - run: hatch -v env create
+      - run: hatch -e test run pytest
+      - run: hatch -e docs run make -C docs html
 
       # - name: Install dependencies
       #   run: |
