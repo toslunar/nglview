@@ -67,6 +67,9 @@ qcelemental = ["qcelemental"]
 [project.urls]
 Homepage = "https://github.com/nglviewer/nglview"
 
+[project.scripts]
+nglview = "nglview.scripts.nglview:main"
+
 [tool.hatch.version]
 path = "nglview/_version.py"
 
