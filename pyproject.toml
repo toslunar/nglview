@@ -9,10 +9,11 @@ build-backend = "hatchling.build"
 name = "nglview"
 description = "IPython widget to interactively view molecular structures and trajectories."
 readme = "README.md"
-license = { file = "LICENSE.txt" }
-requires-python = ">=3.7"
+license = { file = "LICENSE" }
+requires-python = ">=3.6"
 authors = [
-    { name = "Alexander S. Rose, Hai Nguyen", email = "alexander.rose@weirdbyte.de" },
+    { name = "Alexander S. Rose", email = "alexander.rose@weirdbyte.de" },
+    { name = "Hai Nguyen" },
 ]
 keywords = [
     "IPython",
@@ -20,16 +21,28 @@ keywords = [
     "Widgets",
 ]
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: IPython",
     "Framework :: Jupyter",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: BSD License",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: JavaScript",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
 ]
 dependencies = [
     "ipywidgets>=7.0.0",
