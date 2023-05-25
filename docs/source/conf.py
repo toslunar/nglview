@@ -28,8 +28,11 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
     'nbsphinx',
-    'jupyter_sphinx',
+    'jupyter_sphinx',  # ... was 'jupyter_sphinx.execute',
     'nbsphinx_link',
 ]
 
@@ -58,9 +61,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'nglview'
-copyright = '2023, Alexander S. Rose, Hai Nguyen'
-author = 'Alexander S. Rose, Hai Nguyen'
+project = 'NGLView'
+copyright = '2016, Alexander Rose, Hai Nguyen'
+author = 'Alexander Rose, Hai Nguyen'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -104,7 +107,6 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
-
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -120,7 +122,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'nglviewdoc'
+htmlhelp_basename = 'NGLViewdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -147,8 +149,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'nglview.tex', 'nglview Documentation',
-     'Alexander S. Rose, Hai Nguyen', 'manual'),
+    (master_doc, 'NGLView.tex', 'NGLView Documentation',
+     'Alexander Rose, Hai Nguyen', 'manual'),
 ]
 
 
@@ -159,7 +161,7 @@ latex_documents = [
 man_pages = [
     (master_doc,
     'nglview',
-    'nglview Documentation',
+    'NGLView Documentation',
      [author], 1)
 ]
 
@@ -171,10 +173,10 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc,
-     'nglview',
-     'nglview Documentation',
+     'NGLView',
+     'NGLView Documentation',
      author,
-     'nglview',
+     'NGLView',
      'IPython widget to interactively view molecular structures and trajectories.',
      'Miscellaneous'),
 ]
@@ -190,7 +192,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
     import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
+    html_theme = 'nature'
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # otherwise, readthedocs.org uses their theme by default, so no need to specify it
