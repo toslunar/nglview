@@ -131,3 +131,17 @@ dependencies = [
     "pytest-cov",
     "pytest>=6.0",
 ]
+
+[tool.pytest.ini_options]
+# TODO: Avoid setting PYTHONPATH
+pythonpath = "nglview/tests"
+# TODO: enable --nbval: Run Jupyter notebooks, validating all output
+testpaths = [
+    "nglview/tests",
+    # "examples",
+]
+norecursedirs = [
+    "node_modules",
+    ".ipynb_checkpoints",
+]
+# addopts = "--nbval --current-env"
